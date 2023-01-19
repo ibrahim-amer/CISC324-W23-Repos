@@ -1,5 +1,3 @@
-; AddTwo.asm - adds two 32-bit integers.
-; Chapter 3 example
 
 include irvine32.inc
 .data

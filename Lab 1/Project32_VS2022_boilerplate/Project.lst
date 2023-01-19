@@ -1,9 +1,7 @@
-Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 00:44:46
-AddTwo.asm						     Page 1 - 1
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 01:04:02
+main.asm						     Page 1 - 1
 
 
-				; AddTwo.asm - adds two 32-bit integers.
-				; Chapter 3 example
 
 				include irvine32.inc
 			      C ; Include file for Irvine32.lib             (Irvine32.inc)
@@ -32,8 +30,8 @@ AddTwo.asm						     Page 1 - 1
  00000008  E8 00000000 E		call dumpregs
  0000000D			main endp
 				end main
-Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 00:44:46
-AddTwo.asm						     Symbols 2 - 1
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 01:04:02
+main.asm						     Symbols 2 - 1
 
 
 

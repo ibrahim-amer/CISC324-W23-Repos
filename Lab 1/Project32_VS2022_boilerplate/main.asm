@@ -46,7 +46,8 @@ main proc
 
 	;;Question 6: reverse the array
 	;; Write your code after this line
-
+	mov edx, offset user_prmpt5
+	Call WriteString
 	exit
 	
 main endp

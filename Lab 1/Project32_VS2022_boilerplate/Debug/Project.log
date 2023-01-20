@@ -1,2 +1,2 @@
 ﻿  Assembling main.asm...
-  Project.vcxproj -> C:\Ibrahim-Workspace-Main\Research\Queen's University\TA\CISC324-W23\CISC324-W23-Repos\Lab 1\Project32_VS2022_boilerplate\Debug\Project.exe
+LINK : fatal error LNK1104: cannot open file 'C:\Ibrahim-Workspace-Main\Research\Queen's University\TA\CISC324-W23\CISC324-W23-Repos\Lab 1\Project32_VS2022_boilerplate\Debug\Project.exe'

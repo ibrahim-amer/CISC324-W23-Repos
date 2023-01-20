@@ -1,9 +1,8 @@
-Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 01:04:02
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 22:02:03
 main.asm						     Page 1 - 1
 
 
-
-				include irvine32.inc
+				INCLUDE IRVINE32.INC
 			      C ; Include file for Irvine32.lib             (Irvine32.inc)
 			      C 
 			      C ;OPTION CASEMAP:NONE		; optional: make identifiers case-sensitive
@@ -22,15 +21,120 @@ main.asm						     Page 1 - 1
 			      C .LIST
 			      C 
  00000000			.data
+ 00000000 50 6C 65 61 73	user_prmpt0 byte "Please enter two integers to subtract: ", 0 
+	   65 20 65 6E 74
+	   65 72 20 74 77
+	   6F 20 69 6E 74
+	   65 67 65 72 73
+	   20 74 6F 20 73
+	   75 62 74 72 61
+	   63 74 3A 20 00
+ 00000028 50 6C 65 61 73	user_prmpt1 byte "Please enter two integers to multiply: ", 0 
+	   65 20 65 6E 74
+	   65 72 20 74 77
+	   6F 20 69 6E 74
+	   65 67 65 72 73
+	   20 74 6F 20 6D
+	   75 6C 74 69 70
+	   6C 79 3A 20 00
+ 00000050 50 6C 65 61 73	user_prmpt2 byte "Please enter two integers to divide. Enter the dividend followed by the divisor: ", 0 
+	   65 20 65 6E 74
+	   65 72 20 74 77
+	   6F 20 69 6E 74
+	   65 67 65 72 73
+	   20 74 6F 20 64
+	   69 76 69 64 65
+	   2E 20 45 6E 74
+	   65 72 20 74 68
+	   65 20 64 69 76
+	   69 64 65 6E 64
+	   20 66 6F 6C 6C
+	   6F 77 65 64 20
+	   62 79 20 74 68
+	   65 20 64 69 76
+	   69 73 6F 72 3A
+	   20 00
+ 000000A2 50 6C 65 61 73	user_prmpt3 byte "Please enter the power followed by the exponent: ", 0 
+	   65 20 65 6E 74
+	   65 72 20 74 68
+	   65 20 70 6F 77
+	   65 72 20 66 6F
+	   6C 6C 6F 77 65
+	   64 20 62 79 20
+	   74 68 65 20 65
+	   78 70 6F 6E 65
+	   6E 74 3A 20 00
+ 000000D4 50 6C 65 61 73	user_prmpt4 byte "Please enter the index of the Fibonacci sequence: ", 0
+	   65 20 65 6E 74
+	   65 72 20 74 68
+	   65 20 69 6E 64
+	   65 78 20 6F 66
+	   20 74 68 65 20
+	   46 69 62 6F 6E
+	   61 63 63 69 20
+	   73 65 71 75 65
+	   6E 63 65 3A 20
+	   00
+ 00000107 50 6C 65 61 73	user_prmpt5 byte "Please enter 10 array elements: ", 0
+	   65 20 65 6E 74
+	   65 72 20 31 30
+	   20 61 72 72 61
+	   79 20 65 6C 65
+	   6D 65 6E 74 73
+	   3A 20 00
 
  00000000			.code
  00000000			main proc
- 00000000  B8 00000005			mov	eax,5				
- 00000005  83 C0 06			add	eax,6				
- 00000008  E8 00000000 E		call dumpregs
- 0000000D			main endp
+					;;Question 1: subtract two given integers
+ 00000000  BA 00000000 R		Mov edx, offset user_prmpt0  
+ 00000005  E8 00000000 E		Call WriteString; don't change this line 
+ 0000000A  E8 00000000 E		Call CRLF ; print new line 
+					;Add subtraction logic after this line
+
+
+					;;Question 2: Multiply two integers
+					
+ 0000000F  BA 00000028 R		mov edx, offset user_prmpt1
+ 00000014  E8 00000000 E		Call WriteString
+ 00000019  E8 00000000 E		Call CRLF
+					;;Write your code after this line
+					COMMENT %
+				This is comment 1
+				This is comment 2
+				This is comment 3
+				%
+
+
+					;;Question 3: divide two integers
+ 0000001E  BA 00000050 R		mov edx, offset user_prmpt2
+ 00000023  E8 00000000 E		Call WriteString
+ 00000028  E8 00000000 E		Call CRLF
+					;;Write your code after this line
+
+					;; Question 4: find the power
+ 0000002D  BA 000000A2 R		mov edx, offset user_prmpt3
+ 00000032  E8 00000000 E		Call WriteString
+ 00000037  E8 00000000 E		Call CRLF
+					;;Write your code after this line
+
+					;; Question 5: find the fibonacci sequence until a given index
+ 0000003C  BA 000000D4 R		mov edx, offset user_prmpt4
+ 00000041  E8 00000000 E		Call WriteString
+ 00000046  E8 00000000 E		Call CRLF
+					;;Write your code after thils line
+
+
+					;;Question 6: reverse the array
+					;; Write your code after this line
+
+					exit
+ 0000004B  6A 00	   *	    push   +000000000h
+ 0000004D  E8 00000000 E   *	    call   ExitProcess
+					
+ 00000052			main endp
+
 				end main
-Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 01:04:02
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    01/19/23 22:02:03
 main.asm						     Symbols 2 - 1
 
 
@@ -124,8 +228,8 @@ Segments and Groups:
 
 FLAT . . . . . . . . . . . . . .	GROUP
 STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
-_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'DATA'	
-_TEXT  . . . . . . . . . . . . .	32 Bit	 0000000D Para	  Public  'CODE'	
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000128 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000052 Para	  Public  'CODE'	
 
 
 Procedures, parameters, and locals:
@@ -232,7 +336,7 @@ WriteStackFrame  . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External
 WriteString  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
 WriteToFile  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
 WriteWindowsMsg  . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
-main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000000D Public STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000052 Public STDCALL
 printf . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
 scanf  . . . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
 wsprintfA  . . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External C
@@ -466,6 +570,12 @@ lightMagenta . . . . . . . . . .	Number	 0000000Dh
 lightRed . . . . . . . . . . . .	Number	 0000000Ch   
 magenta  . . . . . . . . . . . .	Number	 00000005h   
 red  . . . . . . . . . . . . . .	Number	 00000004h   
+user_prmpt0  . . . . . . . . . .	Byte	 00000000 _DATA	
+user_prmpt1  . . . . . . . . . .	Byte	 00000028 _DATA	
+user_prmpt2  . . . . . . . . . .	Byte	 00000050 _DATA	
+user_prmpt3  . . . . . . . . . .	Byte	 000000A2 _DATA	
+user_prmpt4  . . . . . . . . . .	Byte	 000000D4 _DATA	
+user_prmpt5  . . . . . . . . . .	Byte	 00000107 _DATA	
 white  . . . . . . . . . . . . .	Number	 0000000Fh   
 wsprintf . . . . . . . . . . . .	Text   	 wsprintfA
 yellow . . . . . . . . . . . . .	Number	 0000000Eh   

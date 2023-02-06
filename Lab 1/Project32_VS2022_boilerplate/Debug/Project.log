@@ -1,2 +1,13 @@
 ﻿  Assembling main.asm...
-LINK : fatal error LNK1104: cannot open file 'C:\Ibrahim-Workspace-Main\Research\Queen's University\TA\CISC324-W23\CISC324-W23-Repos\Lab 1\Project32_VS2022_boilerplate\Debug\Project.exe'
+main.asm(1): error A2044: invalid character in file
+main.asm(2): error A2013: .MODEL must precede this directive
+main.asm(3): error A2034: must be in segment block
+main.asm(4): error A2034: must be in segment block
+main.asm(5): error A2034: must be in segment block
+main.asm(6): error A2034: must be in segment block
+main.asm(7): error A2034: must be in segment block
+main.asm(8): error A2034: must be in segment block
+main.asm(10): error A2013: .MODEL must precede this directive
+main.asm(11): error A2034: must be in segment block : main
+main.asm(13): fatal error A1010: unmatched block nesting : main
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: The command "ml.exe /c /nologo /Sg /Zi /Fo"Debug\main.obj" /Fl"Project.lst" /I "c:\Irvine" /W3 /errorReport:prompt  /Tamain.asm" exited with code 1.

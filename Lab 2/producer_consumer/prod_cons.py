@@ -24,13 +24,14 @@ class Producer(threading.Thread):
     def run(self, id=0):
 
         global CAPACITY, buffer, in_index, out_index, barrier, finished
+        #TODO: mark the semaphores as global here
 
         items_produced = 0
         counter = 0
 
         while items_produced < 20:
-            # TODO: use one of the declared semaphores here
-            # TODO: use one of the declared semaphores here
+            # TODO: acquire one of the declared semaphores here
+            # TODO: acquire one of the declared semaphores here
 
             counter += 1
             buffer[in_index] = counter
@@ -59,6 +60,7 @@ class Consumer(threading.Thread):
 
   def run(self):
     global CAPACITY, buffer, in_index, out_index, counter
+    #TODO: mark the semaphores as global here
 
     items_consumed = 0
     while True:
